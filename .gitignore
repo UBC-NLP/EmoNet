@@ -1,0 +1,8 @@
+.idea
+.ipynb_checkpoints
+venv/
+emotion/.ipynb_checkpoints
+emotion/venv/
+emotion/__pycache__
+emotion/data/
+emotion/resources/model.pt
