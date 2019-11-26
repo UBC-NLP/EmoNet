@@ -82,7 +82,7 @@ That movie was scary
 then running: 
 
 ```
-emonet -b path/to/file/text.tsv --dist
+$ emonet -b path/to/file/text.tsv --dist
 ```
 gets you the output: 
 ```
