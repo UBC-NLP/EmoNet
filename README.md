@@ -54,7 +54,7 @@ print(predictions)
 Here is the output:
 ```
 Predict a text and display the distribution
-('joy', 0.8978073, {'anger': 0.0008576517, 'anticipation': 0.06090205, 'disgust': 0.00068270933, 'fear': 0.007252514, 'joy': 0.8978073, 'sadness': 0.004249889, 'surprise': 0.025819499, 'trust': 0.0024283403})
+[('joy', 0.8978073, {'anger': 0.0008576517, 'anticipation': 0.06090205, 'disgust': 0.00068270933, 'fear': 0.007252514, 'joy': 0.8978073, 'sadness': 0.004249889, 'surprise': 0.025819499, 'trust': 0.0024283403})]
 
 Predict a text file line by line:
 [('joy', 0.9871133), ('anger', 0.94085765), ('fear', 0.99755955), ('anticipation', 0.98000574), ('joy', 0.5602796), ('joy', 0.35310036)]
