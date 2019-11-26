@@ -16,7 +16,7 @@ Once TensorFlow 2.0 and PyTorch has been installed, you can install from source 
 pip install git+https://github.com/UBC-NLP/emonet.git
 ```
 It will automatically install other dependencies including '
-happiestfuntokenizing', 'numpy' and 'pandas'.
+happiestfuntokenizing', 'transofrmers', 'numpy' and 'pandas'.
 
 ## Usage
 ### As A Python Library
