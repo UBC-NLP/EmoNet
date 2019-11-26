@@ -74,8 +74,9 @@ It is very simple to use the interactive mode. Invoke using ` python
 emonet.py ` or just ` emonet.py ` if you have already installed the
 package.
 
-```
 
+### Interactive Mode
+```
 ~> python emonet.py
 >>> Spectacular day in Brisbane today. Perfect for sitting in the sun and thinking up big ideas and resetting plans.
 [('joy', 0.8978073)]
