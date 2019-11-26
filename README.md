@@ -88,8 +88,6 @@ gets you the output:
 ```
 [('joy', 0.85855854, {'anger': 0.009707213, 'anticipation': 0.011866086, 'disgust': 0.00912305, 'fear': 0.018755471, 'joy': 0.85855854, 'sadness': 0.039343264, 'surprise': 0.037687544, 'trust': 0.014958782}), 
 ('fear', 0.6364692, {'anger': 0.02605511, 'anticipation': 0.020012422, 'disgust': 0.013645536, 'fear': 0.6364692, 'joy': 0.09334463, 'sadness': 0.14103319, 'surprise': 0.06486984, 'trust': 0.00457005})]
-
-
 ```
 
 
