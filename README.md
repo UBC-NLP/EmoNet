@@ -13,7 +13,7 @@ First you need to install both, [TensorFlow](https://www.tensorflow.org/install/
 ### From Source
 Once TensorFlow 2.0 and PyTorch has been installed, you can install from source by running:
 ```
-pip install git+https://github.com/UBC-NLP/emonet.git
+pip install git+https://github.com/UBC-NLP/EmoNet.git
 ```
 It will automatically install other dependencies including '
 happiestfuntokenizing', 'transofrmers', 'numpy' and 'pandas'.
