@@ -10,7 +10,7 @@ setup(name='emonet',
       packages=['emonet'],
       install_requires=[
           'happiestfuntokenizing',
-          'numpy', 'pandas',
+          'numpy', 'pandas', 'gensim'
           'torch',
           'transformers'
       ],
