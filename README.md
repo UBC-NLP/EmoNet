@@ -71,6 +71,7 @@ Predict a text file line by line:
 | -d, --dist | show full distribution over languages |
 
 **Example**:
+
 Assuming `path/to/file/text.tsv` containts the following: 
 ```
 content
