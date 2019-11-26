@@ -70,12 +70,31 @@ Predict a text file line by line:
 |---| --- | 
 | -d, --dist | show full distribution over languages |
 
+**Example**:
+Assuming `path/to/file/text.tsv` containts the following: 
+```
+content
+I am happy about this 
+Yes, it was a shock
+```
+
+then if you run 
+```
+emonet -b path/to/file/text.tsv --dist
+```
+You get 
+```
+[('joy', 0.6887744, {'anger': 0.0099864835, 'anticipation': 0.0004188584, 'disgust': 0.004898878, 'fear': 0.011613312, 'joy': 0.6887744, 'sadness': 0.0151192695, 'surprise': 0.26904938, 'trust': 0.0001394165}), ('joy', 0.8308038, {'anger': 0.011912104, 'anticipation': 0.014067662, 'disgust': 0.01053577, 'fear': 0.025105035, 'joy': 0.8308038, 'sadness': 0.04935877, 'surprise': 0.044514637, 'trust': 0.013702178})]
+
+```
+
+
+### Interactive Mode
 It is very simple to use the interactive mode. Invoke using ` python
 emonet.py ` or just ` emonet.py ` if you have already installed the
 package.
 
 
-### Interactive Mode
 ```
 ~> python emonet.py
 >>> Spectacular day in Brisbane today. Perfect for sitting in the sun and thinking up big ideas and resetting plans.
