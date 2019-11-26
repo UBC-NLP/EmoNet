@@ -1,6 +1,6 @@
 # emonet
 ## Introduction
-emonet is a tool for ... [TBD]
+EmoNet is a neural network tool for emotion recognition ... [TBD]
 
 ## Installation
 This repo is tested on Python 3.6+, PyTorch 1.2.0+ and TensorFlow 2.0.0
