@@ -1,26 +1,25 @@
 from setuptools import setup
 
-setup(name='emotion',
+setup(name='emonet',
       version='0.1',
       description='description',
-      url='',
+      url='github.com/UBC-NLP/emonet',
       author='',
       author_email='',
       license='GNU',
-      packages=['emotion'],
+      packages=['emonet'],
       install_requires=[
-          'numpy', 'pandas', 'keras', 'sklearn',
+          'happiestfuntokenizing',
+          'numpy', 'pandas',
           'torch',
-          'transformers',
-          'gensim',
-          'skimage'
+          'transformers'
       ],
 
       entry_points={
           'console_scripts': [
-              'emotionnet = emotione.emotionnet:main',
+              'emonet = emonet.emonet:main',
           ],
       },
-      package_data={'emotionnet': ['resources/*']},
+      package_data={'emonet': ['resources/*']},
       include_package_data=True,
       zip_safe=False)

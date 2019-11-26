@@ -1,13 +1,16 @@
 # encoding: utf-8
-import os
+import os, re
+from happiestfuntokenizing.happiestfuntokenizing import Tokenizer
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence, pad_packed_sequence
+from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 from gensim.models import FastText, Word2Vec
 import pandas as pd
 import numpy as np
 import optparse
+
+
 
 
 class _BatchWordEmbeddings(nn.Module):
@@ -150,7 +153,7 @@ class _GRU_dense(nn.Module):
         return preds, labels
 
 
-class EmotionNet():
+class EmoNet():
     '''
     EmotionNet
     '''
@@ -204,7 +207,7 @@ class EmotionNet():
             chunk_id += 1
         large_file.close()
 
-    def predict(self, text=None, path=None, language='ar', with_dist=False):
+    def predict(self, text=None, path=None, with_dist=False):
         list_scores = []
         if text is not None:
             x = self.__simple_tokenizer([text])
@@ -240,12 +243,26 @@ class EmotionNet():
 
         return list(zip(labels, values, dist)) if with_dist else list(zip(labels, values))
 
-    def __simple_tokenizer(self, str):
-        sample = [self.__tweet_clean(y) for y in str]
+    def __simple_tokenizer(self, tweet):
+        # return tokenizer.tokenize(str)
+        sample = [self.__tweet_clean(y) for y in tweet]
         return sample
 
     def __tweet_clean(self, text):
-        seq = text.split(' ')
+        """
+            This will do some cleaning (including reducing letter repetition to max of 2 contigous
+            sequences), before we pass text to the Tokenizer. Note: It might be the case you don't want
+            to actually normalize, e.g., if you want to detect intensity of expression. "looool" is not the same
+            as "lool"
+            """
+        t = re.sub(r'https?://[^\s<>"]+|www\.[^\s<>"]+', '<URL>', text)
+        t = re.sub(r'@\S+', '<USER>', t)
+        t = re.sub(r'{}[.]+', '<USER>', t)
+        t = re.sub(r'(.)\1+', r'\1\1', t)
+        # t = re.sub(r'#', '',t)
+
+        tokenizer = Tokenizer(preserve_case=True)
+        seq = tokenizer.tokenize(t)
         seq = seq[0:self.__max_seq_length]
         if len(seq) == 0:
             seq.append('<UNK>')
@@ -256,7 +273,6 @@ class EmotionNet():
         sample = [int(label2ind[y]) for y in str]
         return sample
 
-
 def main():
     parser = optparse.OptionParser()
     parser.add_option('-b', '--batch', action="store", default=None,
@@ -265,7 +281,7 @@ def main():
 
     options, args = parser.parse_args()
 
-    identifier = EmotionNet()
+    identifier = EmoNet()
     if options.batch is not None:
         # "==== Batch Mode ===="
         predictions = identifier.predict(text=None, path=options.batch, with_dist=options.dist)
@@ -293,9 +309,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    em = EmotionNet()
-    p = em.predict(text='Sat in a gym surrounded by big , sweaty Yorkshire men !')
-    # p = em.predict(path='C:/Users/hazadeh/WorkStations/PycharmProjects/emotion/emotion/data/test.tsv', with_dist=True)
-    for line in p:
-        print(line)
+    main()
