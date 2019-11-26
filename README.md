@@ -78,11 +78,12 @@ I am happy about this
 Yes, it was a shock
 ```
 
-then if you run 
+then running: 
+
 ```
 emonet -b path/to/file/text.tsv --dist
 ```
-You get 
+gets you the output: 
 ```
 [('joy', 0.6887744, {'anger': 0.0099864835, 'anticipation': 0.0004188584, 'disgust': 0.004898878, 'fear': 0.011613312, 'joy': 0.6887744, 'sadness': 0.0151192695, 'surprise': 0.26904938, 'trust': 0.0001394165}), ('joy', 0.8308038, {'anger': 0.011912104, 'anticipation': 0.014067662, 'disgust': 0.01053577, 'fear': 0.025105035, 'joy': 0.8308038, 'sadness': 0.04935877, 'surprise': 0.044514637, 'trust': 0.013702178})]
 
