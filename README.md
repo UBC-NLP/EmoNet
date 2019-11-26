@@ -33,7 +33,7 @@ You can use emonet as a Python library.
 
 
 **Example**:
-```
+```python
 from emonet import EmoNet
 
 em = EmoNet()
