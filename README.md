@@ -19,7 +19,7 @@ It will automatically install other dependencies including '
 happiestfuntokenizing', 'transofrmers', 'numpy' and 'pandas'.
 
 ## Usage
-### As A Python Library
+### As a Python Library
 You can use emonet as a Python library.
 
 *EmoNet.predict*
