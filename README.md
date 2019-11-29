@@ -1,6 +1,6 @@
 # EmoNet
 ## Introduction
-EmoNet is a neural network tool for emotion recognition, described in this [paper](https://www.aclweb.org/anthology/P17-1067/). ... [TBD]
+EmoNet is a neural network tool for emotion recognition, described in this [paper](https://www.aclweb.org/anthology/P17-1067/). The current packaged version predicts 9 emotion categories (p2 in the paper). This is a work in progress, and so the rest of categories will be added. ... [TBD]
 
 ## Installation
 This repo is tested on Python 3.6+, PyTorch 1.2.0+ and TensorFlow 2.0.0
